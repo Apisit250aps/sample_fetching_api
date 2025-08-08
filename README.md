@@ -242,3 +242,58 @@ final data = json.decode(response.body);
 - UI ที่ไม่ต้องการ complex state management
 
 FutureBuilder จัดการ lifecycle ของ async operations และ rebuild UI อัตโนมัติเมื่อสถานะเปลี่ยนแปลง
+
+---
+
+## API Example: `https://dummyjson.com/posts`
+
+ในตัวอย่างนี้ เราจะสร้าง API ที่เชื่อมต่อกับ `https://dummyjson.com/posts` ซึ่งเป็น API ที่ให้ข้อมูลโพสต์ในรูปแบบ JSON โดยโครงสร้างข้อมูลในโพสต์จะมีรายละเอียดดังนี้:
+
+### โครงสร้างข้อมูลของโพสต์:
+
+```json
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "His mother had always taught him",
+      "body": "His mother had always taught him not to ever think of himself as better than others. He'd tried to live by this motto. He never looked down on those who were less fortunate or who had less money than him. But the stupidity of the group of people he was talking to made him change his mind.",
+      "tags": ["history", "american", "crime"],
+      "reactions": {
+        "likes": 192,
+        "dislikes": 25
+      },
+      "views": 305,
+      "userId": 121
+    },
+    {
+      "id": 2,
+      "title": "He was an expert but not in a discipline",
+      "body": "He was an expert but not in a discipline that anyone could fully appreciate. He knew how to hold the cone just right so that the soft server ice-cream fell into it at the precise angle to form a perfect cone each and every time. It had taken years to perfect and he could now do it without even putting any thought behind it.",
+      "tags": ["french", "fiction", "english"],
+      "reactions": {
+        "likes": 859,
+        "dislikes": 32
+      },
+      "views": 4884,
+      "userId": 91
+    }
+  ]
+}
+```
+
+### ข้อมูลในโพสต์ประกอบด้วย:
+
+* `id`: หมายเลขที่ระบุโพสต์
+* `title`: หัวข้อของโพสต์
+* `body`: เนื้อหาของโพสต์
+* `tags`: หมวดหมู่หรือแท็กที่เกี่ยวข้องกับโพสต์
+* `reactions`: จำนวน `likes` และ `dislikes` ของโพสต์
+* `views`: จำนวนการดูโพสต์
+* `userId`: ID ของผู้ใช้ที่โพสต์
+
+### วิธีการใช้งาน API:
+
+ในการใช้งาน API นี้ให้ลองใช้ตัวอย่างในภาษาไทย โดยแปลข้อมูลที่ได้รับจาก API ไปใช้ในบริบทที่เกี่ยวข้องกับเนื้อหาของโพสต์ที่มีใน `dummyjson.com` ที่มีความเหมาะสมกับผู้ใช้งานในประเทศไทยหรือในบริบทต่างๆ ที่เกี่ยวข้อง โดยสามารถปรับใช้ข้อมูลจากโครงสร้างนี้เพื่อทำให้เข้าใจและเหมาะสมกับการใช้งานในระบบของคุณได้.
+
+การแปลงข้อมูลจาก API นี้สามารถทำได้ง่ายๆ โดยการแปลงภาษาในฟิลด์ต่างๆ เช่น การแสดงผลข้อความใน `title` และ `body` ให้อยู่ในรูปแบบภาษาไทย พร้อมกับการปรับแต่งเพิ่มเติมให้เหมาะสมกับกลุ่มผู้ใช้.
